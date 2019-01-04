@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+      <h1>Warrior Gaming</h1>
+      <h6>Play Hard, Play to Win!</h6>
+      <br>
+      <p>Click <a href="/login">here</a> to login</p>
+      <p>Click <a href="/logout">here</a> to logout</p>
+      {% for message in get_flashed_messages() %}
+        <p> {{ message }} </p>
+      {% endfor %}
+
+      <br>
+      <h3>Welcome to WG!</h3>
+      <p>Here we curate content regarding video games and hobbies in podcast and video formats.</p>
+
+      <h3>Latest Posts:</h3>
+      {% for post in posts %}
+        <strong>Title:</strong> {{ post.title }} <br>
+        <strong>Author</strong> {{ post.user }} <br>
+        <strong>Post:</strong> {{ post. description }}<br>
+        <br>
+      {% endfor %}
+
+{% endblock %}
