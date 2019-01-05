@@ -1,23 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-      <h1>Warrior Gaming</h1>
-      <h5>Play Hard, Play to Win!</h5>
-      <br>
-      <p>Click <a href="/login">here</a> to login</p>
-      <p>Click <a href="/logout">here</a> to logout</p>
-      {% for message in get_flashed_messages() %}
-        <p> {{ message }} </p>
-      {% endfor %}
-
       <h5>Welcome to WG!</h5>
       <p>Here we curate content regarding video games and hobbies in podcast and video formats.</p>
 
-      <h2>Latest Posts:</h2>
       {% for post in posts %}
-        <h3>{{ post.title }}</h3>
-        <h5>By {{ post.author }} on {{ post.date_posted }}</h5>
-        <p>{{ post.content }}</p>
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
       {% endfor %}
 
 {% endblock content %}

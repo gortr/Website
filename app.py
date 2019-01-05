@@ -61,6 +61,11 @@ def home():
 def welcome():
     return render_template('about.html', title='About') # Renders the about.html template
 
+# Allows the users to become a registered user on the website.
+@app.route('/register')
+def register():
+    return render_template('index.html')
+
 # Login Page for users to log in and check out member specific content
 @app.route('/login', methods=['GET', 'POST'])
 def login():
