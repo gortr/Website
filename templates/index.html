@@ -2,7 +2,7 @@
 {% block content %}
 
       <h1>Warrior Gaming</h1>
-      <h6>Play Hard, Play to Win!</h6>
+      <h5>Play Hard, Play to Win!</h5>
       <br>
       <p>Click <a href="/login">here</a> to login</p>
       <p>Click <a href="/logout">here</a> to logout</p>
@@ -10,16 +10,14 @@
         <p> {{ message }} </p>
       {% endfor %}
 
-      <br>
-      <h3>Welcome to WG!</h3>
+      <h5>Welcome to WG!</h5>
       <p>Here we curate content regarding video games and hobbies in podcast and video formats.</p>
 
-      <h3>Latest Posts:</h3>
+      <h2>Latest Posts:</h2>
       {% for post in posts %}
-        <strong>Title:</strong> {{ post.title }} <br>
-        <strong>Author</strong> {{ post.user }} <br>
-        <strong>Post:</strong> {{ post. description }}<br>
-        <br>
+        <h3>{{ post.title }}</h3>
+        <h5>By {{ post.author }} on {{ post.date_posted }}</h5>
+        <p>{{ post.content }}</p>
       {% endfor %}
 
-{% endblock %}
+{% endblock content %}

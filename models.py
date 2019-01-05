@@ -28,7 +28,7 @@ class Posts(Base):
 
 	id = Column(Integer, primary_key = True)
 	title = Column(String(80), nullable = False)
-	description = Column(String(1500))
+	content = Column(String(1500))
 	user_id = Column(Integer, ForeignKey('user.id'))
 	user = relationship(User)
 
@@ -37,7 +37,7 @@ class Posts(Base):
 		return {
 			'id': self.id,
 			'title': self.title,
-			'description': self.description,
+			'content': self.content,
 			'user_id': self.user_id
 		}
 
