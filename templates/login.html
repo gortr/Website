@@ -3,12 +3,17 @@
 {% block content %}
 {% include "header.html" %}
 
+    <div class="loginbox">
       <h1>Login</h1>
-      <br>
       <form action="" method="post">
+        <p>Username</p>
         <input type="text" placeholder="Username" name="username" value="{{ request.form.username }}">
+        <p>Password</p>
         <input type="password" placeholder="Password" name="password" value="{{ request.form.password }}">
-      <input class="btn btn-default" type="submit" value="Login">
+        <input class="btn btn-default" type="submit" value="Login">
+        <a href="#">Forgot your password?</a><br>
+        <a href="#">Don't have an account?</a>
       </form>
+    </div>
 
 {% endblock %}
